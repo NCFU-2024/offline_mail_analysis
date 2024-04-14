@@ -4,14 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Авторизация</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт */
+            background-color: #e9ecef; /* Нейтральный фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Полная высота видимой области */
+            margin: 0; /* Убираем стандартные отступы */
+        }
+        form {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            color: #666; /* Серый цвет текста */
+            display: block; /* Элементы label занимают всю ширину */
+            margin-bottom: 5px; /* Отступ между label и input */
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%; /* Ширина соответствует ширине контейнера */
+            padding: 8px;
+            margin-bottom: 10px; /* Отступ между элементами */
+            border: 1px solid #ccc; /* Граница */
+            border-radius: 4px; /* Скругленные углы */
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Голубой цвет кнопки */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Темно-голубой цвет при наведении */
+        }
+    </style>
 </head>
 <body>
     <h2>Авторизация</h2>
     <form method="post" action="/login">
-        <label for="username">Имя пользователя:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Пароль:</label><br>
-        <input type="password" id="password" name="password"><br><br>
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password">
         <input type="submit" value="Войти">
     </form>
 </body>

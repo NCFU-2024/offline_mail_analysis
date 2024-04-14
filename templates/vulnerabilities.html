@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Уязвимости</title>
+    <title>Утеч</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         th, td {
             border: 1px solid #ddd;
@@ -17,6 +22,21 @@
         th {
             background-color: #f2f2f2;
         }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -24,16 +44,19 @@
     <table>
         <tr>
             <th>ID</th>
-            <th>Название</th>
-            <th>Уровень</th>
+            <th>Email</th>
+            <th>Type</th>
         </tr>
         {% for vulnerability in vulnerabilities %}
         <tr>
             <td>{{ vulnerability.id }}</td>
-            <td>{{ vulnerability.name }}</td>
-            <td>{{ vulnerability.severity }}</td>
+            <td>{{ vulnerability.Email }}</td>
+            <td>{{ vulnerability.Type }}</td>
+            
         </tr>
         {% endfor %}
     </table>
+    <!-- Кнопка Назад, ведущая на главную страницу или предыдущую -->
+    <button onclick="history.back()" class="back-button">Назад</button>
 </body>
 </html>

@@ -10,15 +10,21 @@ logging.basicConfig(filename='app.log', level=logging.INFO)
 # Предположим, что у вас есть некоторая база данных пользователей
 # Здесь мы создаем простой словарь пользователей для демонстрации
 users = {
-    'user1': 'password1',
+    'user1': 'pass1',
     'user2': 'password2'
 }
 
 
 vulnerabilities_data = [
-    {'id': 1, 'name': 'Уязвимость 1', 'severity': 'Высокая'},
-    {'id': 2, 'name': 'Уязвимость 2', 'severity': 'Средняя'},
-    {'id': 3, 'name': 'Уязвимость 3', 'severity': 'Низкая'}
+    {'id': 1, 'Email': 'Volconon@company.name', 'Type': 'Passport'},
+    {'id': 2, 'Email': 'LilAngel@company.name', 'Type': 'Card'},
+    {'id': 3, 'Email': 'FoxSela@company.name', 'Type': 'Card'},
+    {'id': 4, 'Email': 'Timmu@company.name', 'Type': 'Passport'},
+    {'id': 5, 'Email': 'Maccus@vip.company.name', 'Type': 'Card'},
+    {'id': 6, 'Email': 'Agent77@our.company.name', 'Type': 'Phone'} ,
+   {'id': 1, 'Email': 'Firestar55257@our.company.name', 'Type': 'Passport'},
+    {'id': 7, 'Email': 'Mendar@company.name', 'Type': 'Card'},
+    {'id': 8, 'Email': 'zrober@cards.company.name', 'Type': 'Card'}
 ]
 
 
@@ -56,20 +62,6 @@ def vulnerabilities():
         return redirect(url_for('login'))
     return render_template('vulnerabilities.html', vulnerabilities=vulnerabilities_data)
 
-
-@app.route('/administration')
-def administration():
-    # Обработка нажатия кнопки "Администрирование"
-    logging.warning('Кнопка "Администрирование" нажата')
-    # Ваш код для администрирования
-    return "Администрирование"
-
-@app.route('/create_profile')
-def create_profile():
-    # Обработка нажатия кнопки "Создать профиль"
-    logging.info('Кнопка "Создать профиль" нажата')
-    # Ваш код для создания профиля
-    return "Создать профиль"
 
 @app.route('/check')
 def check():
